@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no,
+        viewport-fit=cover">
+
+    <meta name="theme-color" content="#070a12">
+
+    <title>Casino Logics | Learn Play And Earn</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255, 193, 7, 0.08),
+                    transparent 32%
+                ),
+                #070a12;
+
+            color: #f5f7fb;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+        }
+
+
+        /* =========================
+           MAIN PAGE
+        ========================= */
+
+        .page {
+            width: 100%;
+            max-width: 680px;
+
+            margin: auto;
+
+            padding: 12px 10px 35px;
+        }
+
+
+        .main-card {
+            border: 1px solid rgba(255, 193, 7, 0.38);
+
+            border-radius: 30px;
+
+            padding: 20px 16px 30px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(13, 19, 34, 0.98),
+                    rgba(7, 11, 21, 0.98)
+                );
+
+            box-shadow:
+                0 0 50px rgba(0, 0, 0, 0.35),
+                inset 0 0 40px rgba(255, 193, 7, 0.015);
+        }
+
+
+        /* =========================
+           LIVE BADGE
+        ========================= */
+
+        .live-badge {
+            width: fit-content;
+
+            margin: 8px auto 24px;
+
+            padding: 10px 20px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(0, 180, 145, 0.09);
+
+            border:
+                1px solid rgba(0, 200, 160, 0.30);
+
+            color: #19c997;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: .3px;
+        }
+
+
+        .live-dot {
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            margin-right: 7px;
+
+            border-radius: 50%;
+
+            background: #19c997;
+
+            box-shadow:
+                0 0 10px #19c997;
+        }
+
+
+        /* =========================
+           TIMER
+        ========================= */
+
+        .timer-box {
+            margin-top: 18px;
+
+            padding: 17px 15px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background: #101725;
+
+            border:
+                1px solid rgba(255, 174, 0, 0.22);
+        }
+
+
+        .timer-title {
+            color: #ffae00;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            margin-bottom: 3px;
+        }
+
+
+        .timer {
+            font-size: 38px;
+
+            line-height: 1.15;
+
+            font-weight: 900;
+
+            color: #08a9ef;
+        }
+
+
+        .timer-text {
+            color: #858c9c;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           TELEGRAM BUTTON
+        ========================= */
+
+        .telegram-btn {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 11px;
+
+            width: 100%;
+
+            min-height: 62px;
+
+            margin-top: 18px;
+
+            border-radius: 21px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0798dc,
+                    #087ab9
+                );
+
+            box-shadow:
+                0 12px 30px rgba(0, 155, 225, .22);
+
+            transition: .2s ease;
+        }
+
+
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 35px rgba(0, 155, 225, .32);
+        }
+
+
+        .telegram-btn.disabled {
+            opacity: .42;
+
+            pointer-events: none;
+
+            cursor: not-allowed;
+
+            filter: grayscale(25%);
+        }
+
+
+        .telegram-btn.active {
+            opacity: 1;
+
+            pointer-events: auto;
+
+            cursor: pointer;
+        }
+
+
+        .telegram-icon {
+            width: 29px;
+            height: 29px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            margin-top: 32px;
+
+            padding: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 17px;
+
+            border-radius: 24px;
+
+            background: #101725;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,.20);
+        }
+
+
+        .profile-image {
+            width: 96px;
+            height: 96px;
+
+            flex-shrink: 0;
+
+            object-fit: cover;
+
+            border-radius: 21px;
+
+            border:
+                2px solid rgba(255,193,7,.35);
+
+            box-shadow:
+                0 0 25px rgba(255,193,7,.10);
+        }
+
+
+        .profile-info h2 {
+            font-size: 24px;
+
+            line-height: 1.15;
+
+            margin-bottom: 7px;
+        }
+
+
+        .profile-info p {
+            color: #8991a3;
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .vip {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #e87900,
+                    #f5a000
+                );
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: .5px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+
+            padding: 37px 5px 10px;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(35px, 8vw, 52px);
+
+            line-height: 1.08;
+
+            font-weight: 850;
+
+            margin-bottom: 8px;
+        }
+
+
+        .blue-text {
+            color: #069fe7;
+        }
+
+
+        .gold-text {
+            color: #ffad00;
+        }
+
+
+        .hero-description {
+            color: #858b9c;
+
+            font-size: 16px;
+
+            line-height: 1.65;
+
+            max-width: 540px;
+
+            margin: 21px auto 0;
+        }
+
+
+        /* =========================
+           SOCIAL PROOF
+        ========================= */
+
+        .social-proof {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-top: 24px;
+
+            color: #9299a8;
+
+            font-size: 14px;
+        }
+
+
+        .avatars {
+            font-size: 19px;
+
+            letter-spacing: -5px;
+
+            margin-right: 7px;
+        }
+
+
+        .social-proof strong {
+            color: white;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            margin-top: 27px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            background: #101725;
+        }
+
+
+        .stat {
+            position: relative;
+
+            text-align: center;
+
+            padding: 20px 7px;
+        }
+
+
+        .stat:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+
+            right: 0;
+
+            top: 20%;
+
+            height: 60%;
+
+            width: 1px;
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+
+        .stat-number {
+            font-size: 27px;
+
+            font-weight: 900;
+
+            margin-bottom: 5px;
+        }
+
+
+        .stat:nth-child(1)
+        .stat-number {
+            color: #08a9ef;
+        }
+
+
+        .stat:nth-child(2)
+        .stat-number {
+            color: #ffad00;
+        }
+
+
+        .stat:nth-child(3)
+        .stat-number {
+            color: #18c99b;
+        }
+
+
+        .stat-label {
+            color: #858c9c;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            margin-top: 34px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+
+        .feature {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            padding: 19px;
+
+            background: #101725;
+
+            border:
+                1px solid rgba(255,255,255,.075);
+
+            border-radius: 22px;
+
+            transition: .2s ease;
+        }
+
+
+        .feature:hover {
+            border-color:
+                rgba(255,193,7,.22);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .feature-icon {
+            width: 47px;
+            height: 47px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: #102b43;
+
+            font-size: 22px;
+        }
+
+
+        .feature h3 {
+            font-size: 17px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .feature p {
+            color: #9ca3b2;
+
+            font-size: 14px;
+
+            line-height: 1.55;
+        }
+
+
+        /* =========================
+           BOTTOM CTA
+        ========================= */
+
+        .bottom-cta {
+            margin-top: 30px;
+
+            text-align: center;
+
+            padding: 27px 18px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,174,0,.10),
+                    rgba(0,145,220,.08)
+                );
+
+            border:
+                1px solid rgba(255,193,7,.17);
+        }
+
+
+        .bottom-cta h2 {
+            font-size: 24px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .bottom-cta p {
+            color: #9299a9;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+
+            line-height: 1.5;
+        }
+
+
+        .join-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 14px 28px;
+
+            border-radius: 15px;
+
+            text-decoration: none;
+
+            background: #ffae00;
+
+            color: #101010;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 10px 25px rgba(255,174,0,.18);
+
+            transition: .2s ease;
+        }
+
+
+        .join-btn:hover {
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding-top: 25px;
+
+            color: #626a7b;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 480px) {
+
+            .page {
+                padding:
+                    9px 9px 25px;
+            }
+
+
+            .main-card {
+                padding:
+                    15px 13px 25px;
+
+                border-radius: 25px;
+            }
+
+
+            .live-badge {
+                font-size: 13px;
+
+                padding:
+                    9px 17px;
+            }
+
+
+            .telegram-btn {
+                min-height: 58px;
+
+                font-size: 17px;
+
+                border-radius: 19px;
+            }
+
+
+            .profile-card {
+                padding: 15px;
+
+                gap: 14px;
+            }
+
+
+            .profile-image {
+                width: 82px;
+                height: 82px;
+
+                border-radius: 18px;
+            }
+
+
+            .profile-info h2 {
+                font-size: 21px;
+            }
+
+
+            .profile-info p {
+                font-size: 13px;
+            }
+
+
+            .hero {
+                padding-top: 31px;
+            }
+
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+
+            .social-proof {
+                font-size: 12px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .stat-number {
+                font-size: 22px;
+            }
+
+
+            .stat-label {
+                font-size: 10px;
+            }
+
+
+            .feature {
+                padding: 17px;
+            }
+
+
+            .feature-icon {
+                width: 43px;
+                height: 43px;
+
+                font-size: 20px;
+            }
+
+
+            .feature h3 {
+                font-size: 16px;
+            }
+
+
+            .feature p {
+                font-size: 13px;
+            }
+
+
+            .bottom-cta h2 {
+                font-size: 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+    <main class="main-card">
+
+
+        <!-- LIVE STATUS -->
+
+        <div class="live-badge">
+
+            <span class="live-dot"></span>
+
+            Casino Analysis Live
+
+        </div>
+
+
+
+        <!-- TIMER -->
+
+        <div class="timer-box">
+
+            <div class="timer-title">
+                ⏳ Please Wait
+            </div>
+
+            <div
+                class="timer"
+                id="timer"
+            >
+                20
+            </div>
+
+            <div class="timer-text">
+                Join button unlock hone mein
+                <b>20 seconds</b> lagenge
+            </div>
+
+        </div>
+
+
+
+        <!-- TELEGRAM BUTTON -->
+
+        <a
+            id="joinButton"
+
+            class="telegram-btn disabled"
+
+            href="javascript:void(0)"
+        >
+
+            <!-- Telegram SVG -->
+
+            <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                fill="white"
+            >
+
+                <path
+                    d="M21.5 3.2L18.2 20c-.25 1.18-.91 1.47-1.84.91l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.15 9.38-8.48c.41-.36-.09-.56-.64-.2L5.34 13.52.34 11.96c-1.09-.34-1.11-1.09.23-1.61L20.1 2.72c.92-.34 1.73.22 1.4.48z"
+                />
+
+            </svg>
+
+            <span>
+                Join Free Channel
+            </span>
+
+            <span>
+                🎰
+            </span>
+
+        </a>
+
+
+
+        <!-- PROFILE -->
+
+        <section class="profile-card">
+
+            <img
+                class="profile-image"
+
+                src="Screenshot_20260919-193816.jpg"
+
+                alt="Casino Logics"
+            >
+
+            <div class="profile-info">
+
+                <h2>
+                    Casino Logics
+                </h2>
+
+                <p>
+                    Learn • Play • Earn
+                </p>
+
+                <span class="vip">
+                    ⭐ VIP CHANNEL
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <h1>
+
+                Smart Gaming
+
+                <br>
+
+                <span class="blue-text">
+                    Insights
+                </span>
+
+                <br>
+
+                <span class="gold-text">
+                    Before You Play
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Casino trends, game insights,
+                probability-based analysis and
+                real-time updates — all in one place.
+
+            </p>
+
+
+            <div class="social-proof">
+
+                <span class="avatars">
+                    👨🏻 👩🏻 👨🏻 👩🏻
+                </span>
+
+                <strong>
+                    2,20,000+
+                </strong>
+
+                <span>
+                    community members
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    5+
+                </div>
+
+                <div class="stat-label">
+                    Years Experience
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    220K+
+                </div>
+
+                <div class="stat-label">
+                    Active Members
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    Daily
+                </div>
+
+                <div class="stat-label">
+                    Updates
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- FEATURES -->
+
+        <section class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎰
+                </div>
+
+                <div>
+
+                    <h3>
+                        Pre-Game Analysis
+                    </h3>
+
+                    <p>
+                        Game trends, available information
+                        and probability-based insights
+                        before you play.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Live Updates & Insights
+                    </h3>
+
+                    <p>
+                        Follow ongoing updates and
+                        changing trends through the
+                        community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <h3>
+                        Probability-Based Insights
+                    </h3>
+
+                    <p>
+                        Understand probabilities,
+                        patterns and available data
+                        instead of relying only on guesses.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <h3>
+                        Learn & Understand
+                    </h3>
+
+                    <p>
+                        Learn about games, probability
+                        and responsible decision-making
+                        through our community.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- BOTTOM CTA -->
+
+        <section class="bottom-cta">
+
+            <h2>
+                Join Casino Logics
+            </h2>
+
+            <p>
+                Get access to the latest community
+                updates and gaming insights on Telegram.
+            </p>
+
+
+            <a
+                class="join-btn"
+
+                href="https://t.me/+k7ZwN-_13DxlYmQ9"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+            >
+
+                ✈️ Join Telegram
+
+            </a>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            Casino Logics © 2026
+
+            <br>
+
+            For informational and entertainment
+            purposes only. Please play responsibly
+            and follow applicable laws.
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    let timeLeft = 20;
+
+    const timer =
+        document.getElementById("timer");
+
+    const joinButton =
+        document.getElementById("joinButton");
+
+
+    const telegramLink =
+        "https://t.me/+k7ZwN-_13DxlYmQ9";
+
+
+    const countdown =
+        setInterval(function () {
+
+            timeLeft--;
+
+            timer.textContent =
+                timeLeft;
+
+
+            if (timeLeft <= 0) {
+
+                clearInterval(countdown);
+
+
+                /* Timer complete */
+
+                timer.textContent = "✓";
+
+
+                /* Activate button */
+
+                joinButton.href =
+                    telegramLink;
+
+
+                joinButton.classList.remove(
+                    "disabled"
+                );
+
+
+                joinButton.classList.add(
+                    "active"
+                );
+
+
+                joinButton.innerHTML = `
+
+                    <svg
+                        class="telegram-icon"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                    >
+
+                        <path
+                            d="M21.5 3.2L18.2 20c-.25 1.18-.91 1.47-1.84.91l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.15 9.38-8.48c.41-.36-.09-.56-.64-.2L5.34 13.52.34 11.96c-1.09-.34-1.11-1.09.23-1.61L20.1 2.72c.92-.34 1.73.22 1.4.48z"
+                        />
+
+                    </svg>
+
+                    <span>
+                        Join Free Channel
+                    </span>
+
+                    <span>
+                        🎰
+                    </span>
+
+                `;
+
+            }
+
+        }, 1000);
+
+
+
+    /* Button click animation */
+
+    document
+        .querySelectorAll("a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    this.style.transform =
+                        "scale(0.98)";
+
+                    setTimeout(
+                        () => {
+
+                            this.style.transform =
+                                "";
+
+                        },
+                        120
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
+
+</body>
+
+</html>
