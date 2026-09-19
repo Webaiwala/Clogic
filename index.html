@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -33,7 +34,7 @@
             background:
                 radial-gradient(
                     circle at 50% 0%,
-                    rgba(255, 193, 7, 0.08),
+                    rgba(255, 193, 7, 0.09),
                     transparent 32%
                 ),
                 #070a12;
@@ -51,7 +52,7 @@
 
 
         /* =========================
-           MAIN PAGE
+           PAGE
         ========================= */
 
         .page {
@@ -65,7 +66,9 @@
 
 
         .main-card {
-            border: 1px solid rgba(255, 193, 7, 0.38);
+
+            border:
+                1px solid rgba(255, 193, 7, 0.38);
 
             border-radius: 30px;
 
@@ -89,6 +92,7 @@
         ========================= */
 
         .live-badge {
+
             width: fit-content;
 
             margin: 8px auto 24px;
@@ -109,11 +113,13 @@
 
             font-weight: 700;
 
-            letter-spacing: .3px;
+            box-shadow:
+                0 0 18px rgba(25, 201, 151, 0.08);
         }
 
 
         .live-dot {
+
             display: inline-block;
 
             width: 7px;
@@ -127,6 +133,34 @@
 
             box-shadow:
                 0 0 10px #19c997;
+
+            animation:
+                livePulse 1.5s infinite;
+        }
+
+
+        @keyframes livePulse {
+
+            0% {
+                opacity: 1;
+
+                box-shadow:
+                    0 0 6px #19c997;
+            }
+
+            50% {
+                opacity: .55;
+
+                box-shadow:
+                    0 0 18px #19c997;
+            }
+
+            100% {
+                opacity: 1;
+
+                box-shadow:
+                    0 0 6px #19c997;
+            }
         }
 
 
@@ -135,9 +169,10 @@
         ========================= */
 
         .timer-box {
+
             margin-top: 18px;
 
-            padding: 17px 15px;
+            padding: 16px;
 
             text-align: center;
 
@@ -147,10 +182,14 @@
 
             border:
                 1px solid rgba(255, 174, 0, 0.22);
+
+            box-shadow:
+                0 0 22px rgba(255, 174, 0, 0.04);
         }
 
 
         .timer-title {
+
             color: #ffae00;
 
             font-size: 14px;
@@ -162,6 +201,7 @@
 
 
         .timer {
+
             font-size: 38px;
 
             line-height: 1.15;
@@ -169,10 +209,14 @@
             font-weight: 900;
 
             color: #08a9ef;
+
+            text-shadow:
+                0 0 15px rgba(8, 169, 239, .35);
         }
 
 
         .timer-text {
+
             color: #858c9c;
 
             font-size: 12px;
@@ -182,10 +226,20 @@
 
 
         /* =========================
+           ALL BUTTON BASE
+        ========================= */
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================
            TELEGRAM BUTTON
         ========================= */
 
         .telegram-btn {
+
             display: flex;
 
             align-items: center;
@@ -216,42 +270,39 @@
                     #087ab9
                 );
 
-            box-shadow:
-                0 12px 30px rgba(0, 155, 225, .22);
+            border:
+                1px solid rgba(55, 195, 255, .30);
 
-            transition: .2s ease;
+            box-shadow:
+                0 0 12px rgba(8, 169, 239, .22),
+                0 12px 30px rgba(0, 155, 225, .20);
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
         }
 
 
         .telegram-btn:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
 
             box-shadow:
-                0 15px 35px rgba(0, 155, 225, .32);
+                0 0 25px rgba(8, 169, 239, .45),
+                0 15px 35px rgba(0, 155, 225, .30);
         }
 
 
-        .telegram-btn.disabled {
-            opacity: .42;
+        .telegram-btn:active {
 
-            pointer-events: none;
-
-            cursor: not-allowed;
-
-            filter: grayscale(25%);
-        }
-
-
-        .telegram-btn.active {
-            opacity: 1;
-
-            pointer-events: auto;
-
-            cursor: pointer;
+            transform:
+                scale(.97);
         }
 
 
         .telegram-icon {
+
             width: 29px;
             height: 29px;
 
@@ -260,10 +311,11 @@
 
 
         /* =========================
-           PROFILE CARD
+           PROFILE
         ========================= */
 
         .profile-card {
+
             margin-top: 32px;
 
             padding: 18px;
@@ -287,6 +339,7 @@
 
 
         .profile-image {
+
             width: 96px;
             height: 96px;
 
@@ -304,7 +357,14 @@
         }
 
 
+        .profile-info {
+
+            flex: 1;
+        }
+
+
         .profile-info h2 {
+
             font-size: 24px;
 
             line-height: 1.15;
@@ -314,6 +374,7 @@
 
 
         .profile-info p {
+
             color: #8991a3;
 
             font-size: 14px;
@@ -322,27 +383,89 @@
         }
 
 
-        .vip {
-            display: inline-block;
+        /* =========================
+           VIP GREEN BUTTON
+        ========================= */
 
-            padding: 7px 14px;
+        .vip-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 8px 15px;
 
             border-radius: 20px;
 
             background:
                 linear-gradient(
                     90deg,
-                    #e87900,
-                    #f5a000
+                    #079e68,
+                    #16c784
                 );
 
             color: white;
 
+            text-decoration: none;
+
             font-size: 12px;
 
-            font-weight: 800;
+            font-weight: 900;
 
             letter-spacing: .5px;
+
+            border:
+                1px solid rgba(60, 255, 178, .35);
+
+            box-shadow:
+                0 0 8px rgba(22, 199, 132, .40),
+                0 0 20px rgba(22, 199, 132, .20);
+
+            animation:
+                vipGlow 2s infinite;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
+        }
+
+
+        .vip-btn:hover {
+
+            transform:
+                translateY(-2px)
+                scale(1.02);
+
+            box-shadow:
+                0 0 12px rgba(22, 199, 132, .70),
+                0 0 28px rgba(22, 199, 132, .40);
+        }
+
+
+        .vip-btn:active {
+
+            transform:
+                scale(.95);
+        }
+
+
+        @keyframes vipGlow {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 0 7px rgba(22, 199, 132, .35),
+                    0 0 18px rgba(22, 199, 132, .15);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 0 13px rgba(22, 199, 132, .65),
+                    0 0 27px rgba(22, 199, 132, .30);
+            }
         }
 
 
@@ -351,6 +474,7 @@
         ========================= */
 
         .hero {
+
             text-align: center;
 
             padding: 37px 5px 10px;
@@ -358,27 +482,36 @@
 
 
         .hero h1 {
-            font-size: clamp(35px, 8vw, 52px);
+
+            font-size:
+                clamp(35px, 8vw, 52px);
 
             line-height: 1.08;
 
             font-weight: 850;
-
-            margin-bottom: 8px;
         }
 
 
         .blue-text {
+
             color: #069fe7;
+
+            text-shadow:
+                0 0 15px rgba(6,159,231,.12);
         }
 
 
         .gold-text {
+
             color: #ffad00;
+
+            text-shadow:
+                0 0 15px rgba(255,173,0,.12);
         }
 
 
         .hero-description {
+
             color: #858b9c;
 
             font-size: 16px;
@@ -392,10 +525,11 @@
 
 
         /* =========================
-           SOCIAL PROOF
+           SOCIAL
         ========================= */
 
         .social-proof {
+
             display: flex;
 
             align-items: center;
@@ -409,10 +543,13 @@
             color: #9299a8;
 
             font-size: 14px;
+
+            flex-wrap: wrap;
         }
 
 
         .avatars {
+
             font-size: 19px;
 
             letter-spacing: -5px;
@@ -422,6 +559,7 @@
 
 
         .social-proof strong {
+
             color: white;
 
             font-size: 17px;
@@ -433,6 +571,7 @@
         ========================= */
 
         .stats {
+
             display: grid;
 
             grid-template-columns:
@@ -452,6 +591,7 @@
 
 
         .stat {
+
             position: relative;
 
             text-align: center;
@@ -461,6 +601,7 @@
 
 
         .stat:not(:last-child)::after {
+
             content: "";
 
             position: absolute;
@@ -479,6 +620,7 @@
 
 
         .stat-number {
+
             font-size: 27px;
 
             font-weight: 900;
@@ -489,23 +631,27 @@
 
         .stat:nth-child(1)
         .stat-number {
+
             color: #08a9ef;
         }
 
 
         .stat:nth-child(2)
         .stat-number {
+
             color: #ffad00;
         }
 
 
         .stat:nth-child(3)
         .stat-number {
+
             color: #18c99b;
         }
 
 
         .stat-label {
+
             color: #858c9c;
 
             font-size: 12px;
@@ -517,6 +663,7 @@
         ========================= */
 
         .features {
+
             margin-top: 34px;
 
             display: flex;
@@ -528,6 +675,7 @@
 
 
         .feature {
+
             display: flex;
 
             align-items: flex-start;
@@ -548,6 +696,7 @@
 
 
         .feature:hover {
+
             border-color:
                 rgba(255,193,7,.22);
 
@@ -557,6 +706,7 @@
 
 
         .feature-icon {
+
             width: 47px;
             height: 47px;
 
@@ -573,10 +723,14 @@
             background: #102b43;
 
             font-size: 22px;
+
+            box-shadow:
+                0 0 15px rgba(8,169,239,.08);
         }
 
 
         .feature h3 {
+
             font-size: 17px;
 
             margin-bottom: 6px;
@@ -584,6 +738,7 @@
 
 
         .feature p {
+
             color: #9ca3b2;
 
             font-size: 14px;
@@ -597,6 +752,7 @@
         ========================= */
 
         .bottom-cta {
+
             margin-top: 30px;
 
             text-align: center;
@@ -618,6 +774,7 @@
 
 
         .bottom-cta h2 {
+
             font-size: 24px;
 
             margin-bottom: 9px;
@@ -625,6 +782,7 @@
 
 
         .bottom-cta p {
+
             color: #9299a9;
 
             font-size: 14px;
@@ -636,6 +794,7 @@
 
 
         .join-btn {
+
             display: inline-flex;
 
             align-items: center;
@@ -658,16 +817,57 @@
 
             font-weight: 900;
 
-            box-shadow:
-                0 10px 25px rgba(255,174,0,.18);
+            border:
+                1px solid rgba(255, 213, 87, .45);
 
-            transition: .2s ease;
+            box-shadow:
+                0 0 9px rgba(255,174,0,.35),
+                0 10px 25px rgba(255,174,0,.15);
+
+            animation:
+                goldGlow 2.4s infinite;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
         }
 
 
         .join-btn:hover {
+
             transform:
-                translateY(-2px);
+                translateY(-2px)
+                scale(1.02);
+
+            box-shadow:
+                0 0 16px rgba(255,174,0,.60),
+                0 12px 30px rgba(255,174,0,.25);
+        }
+
+
+        .join-btn:active {
+
+            transform:
+                scale(.96);
+        }
+
+
+        @keyframes goldGlow {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 0 7px rgba(255,174,0,.25),
+                    0 10px 25px rgba(255,174,0,.12);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 0 15px rgba(255,174,0,.55),
+                    0 12px 30px rgba(255,174,0,.20);
+            }
         }
 
 
@@ -676,6 +876,7 @@
         ========================= */
 
         footer {
+
             text-align: center;
 
             padding-top: 25px;
@@ -695,12 +896,14 @@
         @media (max-width: 480px) {
 
             .page {
+
                 padding:
                     9px 9px 25px;
             }
 
 
             .main-card {
+
                 padding:
                     15px 13px 25px;
 
@@ -709,6 +912,7 @@
 
 
             .live-badge {
+
                 font-size: 13px;
 
                 padding:
@@ -717,6 +921,7 @@
 
 
             .telegram-btn {
+
                 min-height: 58px;
 
                 font-size: 17px;
@@ -726,6 +931,7 @@
 
 
             .profile-card {
+
                 padding: 15px;
 
                 gap: 14px;
@@ -733,6 +939,7 @@
 
 
             .profile-image {
+
                 width: 82px;
                 height: 82px;
 
@@ -741,53 +948,64 @@
 
 
             .profile-info h2 {
+
                 font-size: 21px;
             }
 
 
             .profile-info p {
+
                 font-size: 13px;
             }
 
 
+            .vip-btn {
+
+                padding:
+                    7px 12px;
+
+                font-size: 11px;
+            }
+
+
             .hero {
+
                 padding-top: 31px;
             }
 
 
             .hero h1 {
+
                 font-size: 35px;
             }
 
 
             .hero-description {
+
                 font-size: 14px;
             }
 
 
-            .social-proof {
-                font-size: 12px;
-
-                flex-wrap: wrap;
-            }
-
-
             .stat-number {
+
                 font-size: 22px;
             }
 
 
             .stat-label {
+
                 font-size: 10px;
             }
 
 
             .feature {
+
                 padding: 17px;
             }
 
 
             .feature-icon {
+
                 width: 43px;
                 height: 43px;
 
@@ -796,18 +1014,22 @@
 
 
             .feature h3 {
+
                 font-size: 16px;
             }
 
 
             .feature p {
+
                 font-size: 13px;
             }
 
 
             .bottom-cta h2 {
+
                 font-size: 22px;
             }
+
         }
 
     </style>
@@ -823,7 +1045,9 @@
     <main class="main-card">
 
 
-        <!-- LIVE STATUS -->
+        <!-- =========================
+             LIVE STATUS
+        ========================== -->
 
         <div class="live-badge">
 
@@ -835,13 +1059,18 @@
 
 
 
-        <!-- TIMER -->
+        <!-- =========================
+             TIMER
+        ========================== -->
 
         <div class="timer-box">
 
             <div class="timer-title">
-                ⏳ Please Wait
+
+                ⏳ Redirecting Soon
+
             </div>
+
 
             <div
                 class="timer"
@@ -850,26 +1079,34 @@
                 20
             </div>
 
+
             <div class="timer-text">
-                Join button unlock hone mein
-                <b>20 seconds</b> lagenge
+
+                Telegram channel par
+                automatic redirect hoga
+
             </div>
 
         </div>
 
 
 
-        <!-- TELEGRAM BUTTON -->
+        <!-- =========================
+             MAIN TELEGRAM BUTTON
+             ALWAYS CLICKABLE
+        ========================== -->
 
         <a
             id="joinButton"
 
-            class="telegram-btn disabled"
+            class="telegram-btn"
 
-            href="javascript:void(0)"
+            href="https://t.me/+k7ZwN-_13DxlYmQ9"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
         >
-
-            <!-- Telegram SVG -->
 
             <svg
                 class="telegram-icon"
@@ -883,9 +1120,11 @@
 
             </svg>
 
+
             <span>
                 Join Free Channel
             </span>
+
 
             <span>
                 🎰
@@ -895,9 +1134,12 @@
 
 
 
-        <!-- PROFILE -->
+        <!-- =========================
+             PROFILE
+        ========================== -->
 
         <section class="profile-card">
+
 
             <img
                 class="profile-image"
@@ -907,19 +1149,34 @@
                 alt="Casino Logics"
             >
 
+
             <div class="profile-info">
 
                 <h2>
                     Casino Logics
                 </h2>
 
+
                 <p>
                     Learn • Play • Earn
                 </p>
 
-                <span class="vip">
+
+                <!-- VIP CLICKABLE -->
+
+                <a
+                    class="vip-btn"
+
+                    href="https://t.me/+k7ZwN-_13DxlYmQ9"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer"
+                >
+
                     ⭐ VIP CHANNEL
-                </span>
+
+                </a>
 
             </div>
 
@@ -927,9 +1184,12 @@
 
 
 
-        <!-- HERO -->
+        <!-- =========================
+             HERO
+        ========================== -->
 
         <section class="hero">
+
 
             <h1>
 
@@ -965,9 +1225,11 @@
                     👨🏻 👩🏻 👨🏻 👩🏻
                 </span>
 
+
                 <strong>
                     2,20,000+
                 </strong>
+
 
                 <span>
                     community members
@@ -979,7 +1241,9 @@
 
 
 
-        <!-- STATS -->
+        <!-- =========================
+             STATS
+        ========================== -->
 
         <section class="stats">
 
@@ -1027,7 +1291,9 @@
 
 
 
-        <!-- FEATURES -->
+        <!-- =========================
+             FEATURES
+        ========================== -->
 
         <section class="features">
 
@@ -1038,16 +1304,21 @@
                     🎰
                 </div>
 
+
                 <div>
 
                     <h3>
                         Pre-Game Analysis
                     </h3>
 
+
                     <p>
-                        Game trends, available information
-                        and probability-based insights
+
+                        Game trends, available
+                        information and
+                        probability-based insights
                         before you play.
+
                     </p>
 
                 </div>
@@ -1062,16 +1333,20 @@
                     📊
                 </div>
 
+
                 <div>
 
                     <h3>
                         Live Updates & Insights
                     </h3>
 
+
                     <p>
-                        Follow ongoing updates and
-                        changing trends through the
-                        community.
+
+                        Follow ongoing updates
+                        and changing trends
+                        through the community.
+
                     </p>
 
                 </div>
@@ -1086,16 +1361,20 @@
                     🎯
                 </div>
 
+
                 <div>
 
                     <h3>
                         Probability-Based Insights
                     </h3>
 
+
                     <p>
+
                         Understand probabilities,
                         patterns and available data
                         instead of relying only on guesses.
+
                     </p>
 
                 </div>
@@ -1110,16 +1389,21 @@
                     💡
                 </div>
 
+
                 <div>
 
                     <h3>
                         Learn & Understand
                     </h3>
 
+
                     <p>
-                        Learn about games, probability
-                        and responsible decision-making
+
+                        Learn about games,
+                        probability and
+                        responsible decision-making
                         through our community.
+
                     </p>
 
                 </div>
@@ -1131,17 +1415,24 @@
 
 
 
-        <!-- BOTTOM CTA -->
+        <!-- =========================
+             BOTTOM CTA
+        ========================== -->
 
         <section class="bottom-cta">
+
 
             <h2>
                 Join Casino Logics
             </h2>
 
+
             <p>
-                Get access to the latest community
-                updates and gaming insights on Telegram.
+
+                Get access to the latest
+                community updates and
+                gaming insights on Telegram.
+
             </p>
 
 
@@ -1190,13 +1481,16 @@
 
 <script>
 
+    /*
+       ==========================================
+       20 SECOND AUTO REDIRECT
+       ==========================================
+    */
+
     let timeLeft = 20;
 
     const timer =
         document.getElementById("timer");
-
-    const joinButton =
-        document.getElementById("joinButton");
 
 
     const telegramLink =
@@ -1217,50 +1511,15 @@
                 clearInterval(countdown);
 
 
-                /* Timer complete */
-
                 timer.textContent = "✓";
 
 
-                /* Activate button */
+                /*
+                   Automatic redirect
+                */
 
-                joinButton.href =
+                window.location.href =
                     telegramLink;
-
-
-                joinButton.classList.remove(
-                    "disabled"
-                );
-
-
-                joinButton.classList.add(
-                    "active"
-                );
-
-
-                joinButton.innerHTML = `
-
-                    <svg
-                        class="telegram-icon"
-                        viewBox="0 0 24 24"
-                        fill="white"
-                    >
-
-                        <path
-                            d="M21.5 3.2L18.2 20c-.25 1.18-.91 1.47-1.84.91l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.15 9.38-8.48c.41-.36-.09-.56-.64-.2L5.34 13.52.34 11.96c-1.09-.34-1.11-1.09.23-1.61L20.1 2.72c.92-.34 1.73.22 1.4.48z"
-                        />
-
-                    </svg>
-
-                    <span>
-                        Join Free Channel
-                    </span>
-
-                    <span>
-                        🎰
-                    </span>
-
-                `;
 
             }
 
@@ -1268,18 +1527,23 @@
 
 
 
-    /* Button click animation */
+    /*
+       ==========================================
+       BUTTON PRESS EFFECT
+       ==========================================
+    */
 
     document
         .querySelectorAll("a")
-        .forEach(function(link) {
+        .forEach(function(button) {
 
-            link.addEventListener(
+            button.addEventListener(
                 "click",
                 function() {
 
                     this.style.transform =
-                        "scale(0.98)";
+                        "scale(.97)";
+
 
                     setTimeout(
                         () => {
